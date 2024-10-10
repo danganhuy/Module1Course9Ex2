@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #character {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img id="character" src="Nobita.png" alt="">
+    <script>
+        let character = document.getElementById("character");
+        let speed = 15;
+        character.style.left = "20px";
+        character.style.top = "20px";
+        function MoveCharacter(event) {
+            switch (event.key) {
+                case "w":
+                    character.style.top = parseInt(character.style.top) - speed + "px";
+                    break;
+                case "s":
+                    character.style.top = parseInt(character.style.top) + speed + "px";
+                    break;
+                case "a":
+                    character.style.left = parseInt(character.style.left) - speed + "px";
+                    break;
+                case "d":
+                    character.style.left = parseInt(character.style.left) + speed + "px";
+                    break;
+            }
+        }
+        addEventListener("keypress", MoveCharacter)
+    </script>
+</body>
+</html>
